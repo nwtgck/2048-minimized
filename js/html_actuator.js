@@ -1,8 +1,8 @@
 class HTMLActuator {
   constructor() {
-    this.tileContainer    = document.querySelector(".tile-container");
-    this.scoreContainer   = document.querySelector(".score-container");
-    this.messageContainer = document.querySelector(".game-message");
+    this.tileContainer    = document.querySelector(".tc");
+    this.scoreContainer   = document.querySelector(".sc");
+    this.messageContainer = document.querySelector(".m");
 
     this.score = 0;
   }
@@ -115,7 +115,7 @@ class HTMLActuator {
   }
 
   message(won) {
-    const type    = won ? "game-won" : "game-over";
+    const type    = won ? "w" : "o";
     const message = won ? "You win!" : "Game over!";
 
     this.messageContainer.classList.add(type);
@@ -124,7 +124,7 @@ class HTMLActuator {
 
   clearMessage() {
     // IE only takes one value to remove at a time.
-    this.messageContainer.classList.remove("game-won");
-    this.messageContainer.classList.remove("game-over");
+    this.messageContainer.classList.remove("w");
+    this.messageContainer.classList.remove("o");
   }
 }

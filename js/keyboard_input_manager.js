@@ -59,7 +59,7 @@ class KeyboardInputManager {
     let touchStartClientX;
 
     let touchStartClientY;
-    const gameContainer = document.getElementsByClassName("game-container")[0];
+    const gameContainer = document.getElementsByClassName("g")[0];
 
     gameContainer.addEventListener("touchstart", event => {
       if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
