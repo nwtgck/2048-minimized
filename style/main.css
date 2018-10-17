@@ -13,7 +13,10 @@
 .ti: .tile-inner
 .t: .title
 .t-N: .title-N
-.p-N-M: .tile-position-N-M
+.pN-M: .tile-position-N-M
+.ts: .tile-super
+.tn: .tile-new
+.tm: .tile-merged
 .l: .lower
 .w: .game-won
 .o: .game-over
@@ -199,118 +202,118 @@ hr {
   position: absolute;
   z-index: 2; }
 
-.tile, .tile .tile-inner {
+.t, .t .ti {
   width: 107px;
   height: 107px;
   line-height: 107px; }
-.tile.tile-position-1-1 {
+.t.p1-1 {
   transform: translate(0px, 0px); }
-.tile.tile-position-1-2 {
+.t.p1-2 {
   transform: translate(0px, 121px); }
-.tile.tile-position-1-3 {
+.t.p1-3 {
   transform: translate(0px, 242px); }
-.tile.tile-position-1-4 {
+.t.p1-4 {
   transform: translate(0px, 363px); }
-.tile.tile-position-2-1 {
+.t.p2-1 {
   transform: translate(121px, 0px); }
-.tile.tile-position-2-2 {
+.t.p2-2 {
   transform: translate(121px, 121px); }
-.tile.tile-position-2-3 {
+.t.p2-3 {
   transform: translate(121px, 242px); }
-.tile.tile-position-2-4 {
+.t.p2-4 {
   transform: translate(121px, 363px); }
-.tile.tile-position-3-1 {
+.t.p3-1 {
   transform: translate(242px, 0px); }
-.tile.tile-position-3-2 {
+.t.p3-2 {
   transform: translate(242px, 121px); }
-.tile.tile-position-3-3 {
+.t.p3-3 {
   transform: translate(242px, 242px); }
-.tile.tile-position-3-4 {
+.t.p3-4 {
   transform: translate(242px, 363px); }
-.tile.tile-position-4-1 {
+.t.p4-1 {
   transform: translate(363px, 0px); }
-.tile.tile-position-4-2 {
+.t.p4-2 {
   transform: translate(363px, 121px); }
-.tile.tile-position-4-3 {
+.t.p4-3 {
   transform: translate(363px, 242px); }
-.tile.tile-position-4-4 {
+.t.p4-4 {
   transform: translate(363px, 363px); }
 
-.tile {
+.t {
   position: absolute;
   transition: 100ms ease-in-out;
   transition-property: transform; }
-  .tile .tile-inner {
+  .t .ti {
     border-radius: 3px;
     background: #eee4da;
     text-align: center;
     font-weight: bold;
     z-index: 10;
     font-size: 55px; }
-  .tile.tile-2 .tile-inner {
+  .t.t2 .ti {
     background: #eee4da;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
-  .tile.tile-4 .tile-inner {
+  .t.t4 .ti {
     background: #ede0c8;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
-  .tile.tile-8 .tile-inner {
+  .t.t8 .ti {
     color: #f9f6f2;
     background: #f2b179; }
-  .tile.tile-16 .tile-inner {
+  .t.t16 .ti {
     color: #f9f6f2;
     background: #f59563; }
-  .tile.tile-32 .tile-inner {
+  .t.t32 .ti {
     color: #f9f6f2;
     background: #f67c5f; }
-  .tile.tile-64 .tile-inner {
+  .t.t64 .ti {
     color: #f9f6f2;
     background: #f65e3b; }
-  .tile.tile-128 .tile-inner {
+  .t.t128 .ti {
     color: #f9f6f2;
     background: #edcf72;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
     font-size: 45px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-128 .tile-inner {
+      .t.t128 .ti {
         font-size: 25px; } }
-  .tile.tile-256 .tile-inner {
+  .t.t256 .ti {
     color: #f9f6f2;
     background: #edcc61;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
     font-size: 45px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-256 .tile-inner {
+      .t.t256 .ti {
         font-size: 25px; } }
-  .tile.tile-512 .tile-inner {
+  .t.t512 .ti {
     color: #f9f6f2;
     background: #edc850;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
     font-size: 45px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-512 .tile-inner {
+      .t.t512 .ti {
         font-size: 25px; } }
-  .tile.tile-1024 .tile-inner {
+  .t.t1024 .ti {
     color: #f9f6f2;
     background: #edc53f;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
     font-size: 35px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-1024 .tile-inner {
+      .t.t1024 .ti {
         font-size: 15px; } }
-  .tile.tile-2048 .tile-inner {
+  .t.t2048 .ti {
     color: #f9f6f2;
     background: #edc22e;
     box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
     font-size: 35px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-2048 .tile-inner {
+      .t.t2048 .ti {
         font-size: 15px; } }
-  .tile.tile-super .tile-inner {
+  .t.ts .ti {
     color: #f9f6f2;
     background: #3c3a32;
     font-size: 30px; }
     @media screen and (max-width: 520px) {
-      .tile.tile-super .tile-inner {
+      .t.ts .ti {
         font-size: 10px; } }
 
 @keyframes appear {
@@ -321,7 +324,7 @@ hr {
   100% {
     opacity: 1;
     transform: scale(1); } }
-.tile-new .tile-inner {
+.tn .ti {
   animation: appear 200ms ease 100ms;
   animation-fill-mode: backwards; }
 
@@ -334,7 +337,7 @@ hr {
 
   100% {
     transform: scale(1); } }
-.tile-merged .tile-inner {
+.tm .ti {
   z-index: 20;
   animation: pop 200ms ease 100ms;
   animation-fill-mode: backwards; }
@@ -470,44 +473,44 @@ hr {
     position: absolute;
     z-index: 2; }
 
-  .tile, .tile .tile-inner {
+  .t, .t .ti {
     width: 58px;
     height: 58px;
     line-height: 58px; }
-  .tile.tile-position-1-1 {
+  .t.p1-1 {
     transform: translate(0px, 0px); }
-  .tile.tile-position-1-2 {
+  .t.p1-2 {
     transform: translate(0px, 67px); }
-  .tile.tile-position-1-3 {
+  .t.p1-3 {
     transform: translate(0px, 135px); }
-  .tile.tile-position-1-4 {
+  .t.p1-4 {
     transform: translate(0px, 202px); }
-  .tile.tile-position-2-1 {
+  .t.p2-1 {
     transform: translate(67px, 0px); }
-  .tile.tile-position-2-2 {
+  .t.p2-2 {
     transform: translate(67px, 67px); }
-  .tile.tile-position-2-3 {
+  .t.p2-3 {
     transform: translate(67px, 135px); }
-  .tile.tile-position-2-4 {
+  .t.p2-4 {
     transform: translate(67px, 202px); }
-  .tile.tile-position-3-1 {
+  .t.p3-1 {
     transform: translate(135px, 0px); }
-  .tile.tile-position-3-2 {
+  .t.p3-2 {
     transform: translate(135px, 67px); }
-  .tile.tile-position-3-3 {
+  .t.p3-3 {
     transform: translate(135px, 135px); }
-  .tile.tile-position-3-4 {
+  .t.p3-4 {
     transform: translate(135px, 202px); }
-  .tile.tile-position-4-1 {
+  .t.p4-1 {
     transform: translate(202px, 0px); }
-  .tile.tile-position-4-2 {
+  .t.p4-2 {
     transform: translate(202px, 67px); }
-  .tile.tile-position-4-3 {
+  .t.p4-3 {
     transform: translate(202px, 135px); }
-  .tile.tile-position-4-4 {
+  .t.p4-4 {
     transform: translate(202px, 202px); }
 
-  .tile .tile-inner {
+  .t .ti {
     font-size: 35px; }
 
   .m p {

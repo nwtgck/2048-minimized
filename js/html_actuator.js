@@ -54,13 +54,13 @@ class HTMLActuator {
     const positionClass = this.positionClass(position);
 
     // We can't use classlist because it somehow glitches when replacing classes
-    const classes = ["tile", `tile-${tile.value}`, positionClass];
+    const classes = ["t", `t${tile.value}`, positionClass];
 
-    if (tile.value > 2048) classes.push("tile-super");
+    if (tile.value > 2048) classes.push("ts");
 
     this.applyClasses(wrapper, classes);
 
-    inner.classList.add("tile-inner");
+    inner.classList.add("ti");
     inner.textContent = tile.value;
 
     if (tile.previousPosition) {
@@ -70,7 +70,7 @@ class HTMLActuator {
         self.applyClasses(wrapper, classes); // Update the position
       });
     } else if (tile.mergedFrom) {
-      classes.push("tile-merged");
+      classes.push("tm");
       this.applyClasses(wrapper, classes);
 
       // Render the tiles that merged
@@ -78,7 +78,7 @@ class HTMLActuator {
         self.addTile(merged);
       });
     } else {
-      classes.push("tile-new");
+      classes.push("tn");
       this.applyClasses(wrapper, classes);
     }
 
@@ -94,7 +94,7 @@ class HTMLActuator {
   }
 
   positionClass(position) {
-    return `tile-position-${position.x + 1}-${position.y + 1}`;
+    return `p${position.x + 1}-${position.y + 1}`;
   }
 
   updateScore(score) {
