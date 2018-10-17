@@ -2,17 +2,6 @@ class KeyboardInputManager {
   constructor() {
     this.events = {};
 
-    if (window.navigator.msPointerEnabled) {
-      //Internet Explorer 10 style
-      this.eventTouchstart    = "MSPointerDown";
-      this.eventTouchmove     = "MSPointerMove";
-      this.eventTouchend      = "MSPointerUp";
-    } else {
-      this.eventTouchstart    = "touchstart";
-      this.eventTouchmove     = "touchmove";
-      this.eventTouchend      = "touchend";
-    }
-
     this.listen();
   }
 
@@ -72,7 +61,7 @@ class KeyboardInputManager {
     let touchStartClientY;
     const gameContainer = document.getElementsByClassName("game-container")[0];
 
-    gameContainer.addEventListener(this.eventTouchstart, event => {
+    gameContainer.addEventListener("touchstart", event => {
       if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
           event.targetTouches.length > 1) {
         return; // Ignore if touching with more than 1 finger
@@ -89,11 +78,11 @@ class KeyboardInputManager {
       event.preventDefault();
     });
 
-    gameContainer.addEventListener(this.eventTouchmove, event => {
+    gameContainer.addEventListener("touchmove", event => {
       event.preventDefault();
     });
 
-    gameContainer.addEventListener(this.eventTouchend, event => {
+    gameContainer.addEventListener("touchend", event => {
       if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
           event.targetTouches.length > 0) {
         return; // Ignore if still touching with one or more fingers
@@ -136,6 +125,6 @@ class KeyboardInputManager {
   bindButtonPress(selector, fn) {
     const button = document.querySelector(selector);
     button.addEventListener("click", fn.bind(this));
-    button.addEventListener(this.eventTouchend, fn.bind(this));
+    button.addEventListener("touchend", fn.bind(this));
   }
 }
