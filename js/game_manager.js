@@ -68,7 +68,6 @@ class GameManager {
       score:      this.score,
       over:       this.over,
       won:        this.won,
-      bestScore:  0, // TODO: Remove it because always zero
       terminated: this.isGameTerminated()
     });
 

@@ -2,7 +2,6 @@ class HTMLActuator {
   constructor() {
     this.tileContainer    = document.querySelector(".tile-container");
     this.scoreContainer   = document.querySelector(".score-container");
-    this.bestContainer    = document.querySelector(".best-container");
     this.messageContainer = document.querySelector(".game-message");
 
     this.score = 0;
@@ -23,7 +22,6 @@ class HTMLActuator {
       });
 
       self.updateScore(metadata.score);
-      self.updateBestScore(metadata.bestScore);
 
       if (metadata.terminated) {
         if (metadata.over) {
@@ -119,10 +117,6 @@ class HTMLActuator {
 
       this.scoreContainer.appendChild(addition);
     }
-  }
-
-  updateBestScore(bestScore) {
-    this.bestContainer.textContent = bestScore;
   }
 
   message(won) {
