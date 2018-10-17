@@ -1,7 +1,7 @@
 class GameManager {
-  constructor(InputManager, Actuator) {
-    this.inputManager   = new InputManager;
-    this.actuator       = new Actuator;
+  constructor() {
+    this.inputManager   = new KeyboardInputManager();
+    this.actuator       = new HTMLActuator();
 
     this.startTiles     = 2;
 
