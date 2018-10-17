@@ -74,17 +74,6 @@ class GameManager {
 
   }
 
-  // Represent the current game as an object
-  serialize() {
-    return {
-      grid:        this.grid.serialize(),
-      score:       this.score,
-      over:        this.over,
-      won:         this.won,
-      keepPlaying: this.keepPlaying
-    };
-  }
-
   // Save all tile positions and remove merger info
   prepareTiles() {
     this.grid.eachCell((x, y, tile) => {

@@ -99,21 +99,4 @@ class Grid {
     return position.x >= 0 && position.x < this.size &&
            position.y >= 0 && position.y < this.size;
   }
-
-  serialize() {
-    const cellState = [];
-
-    for (let x = 0; x < this.size; x++) {
-      const row = cellState[x] = [];
-
-      for (let y = 0; y < this.size; y++) {
-        row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
-      }
-    }
-
-    return {
-      size: this.size,
-      cells: cellState
-    };
-  }
 }
