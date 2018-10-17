@@ -1,6 +1,5 @@
 class GameManager {
-  constructor(size, InputManager, Actuator) {
-    this.size           = size; // Size of the grid
+  constructor(InputManager, Actuator) {
     this.inputManager   = new InputManager;
     this.actuator       = new Actuator;
 
@@ -32,7 +31,7 @@ class GameManager {
 
   // Set up the game
   setup() {
-    this.grid        = new Grid(this.size);
+    this.grid        = new Grid();
     this.score       = 0;
     this.over        = false;
     this.won         = false;
@@ -172,7 +171,7 @@ class GameManager {
   buildTraversals(vector) {
     const traversals = { x: [], y: [] };
 
-    for (let pos = 0; pos < this.size; pos++) {
+    for (let pos = 0; pos < 4; pos++) {
       traversals.x.push(pos);
       traversals.y.push(pos);
     }
@@ -210,8 +209,8 @@ class GameManager {
 
     let tile;
 
-    for (let x = 0; x < this.size; x++) {
-      for (let y = 0; y < this.size; y++) {
+    for (let x = 0; x < 4; x++) {
+      for (let y = 0; y < 4; y++) {
         tile = this.grid.cellContent({ x, y });
 
         if (tile) {

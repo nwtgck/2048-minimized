@@ -1,6 +1,5 @@
 class Grid {
-  constructor(size, previousState) {
-    this.size = size;
+  constructor(previousState) {
     this.cells = previousState ? this.fromState(previousState) : this.empty();
   }
 
@@ -8,10 +7,10 @@ class Grid {
   empty() {
     const cells = [];
 
-    for (let x = 0; x < this.size; x++) {
+    for (let x = 0; x < 4; x++) {
       const row = cells[x] = [];
 
-      for (let y = 0; y < this.size; y++) {
+      for (let y = 0; y < 4; y++) {
         row.push(null);
       }
     }
@@ -22,10 +21,10 @@ class Grid {
   fromState(state) {
     const cells = [];
 
-    for (let x = 0; x < this.size; x++) {
+    for (let x = 0; x < 4; x++) {
       const row = cells[x] = [];
 
-      for (let y = 0; y < this.size; y++) {
+      for (let y = 0; y < 4; y++) {
         const tile = state[x][y];
         row.push(tile ? new Tile(tile.position, tile.value) : null);
       }
@@ -57,8 +56,8 @@ class Grid {
 
   // Call callback for every cell
   eachCell(callback) {
-    for (let x = 0; x < this.size; x++) {
-      for (let y = 0; y < this.size; y++) {
+    for (let x = 0; x < 4; x++) {
+      for (let y = 0; y < 4; y++) {
         callback(x, y, this.cells[x][y]);
       }
     }
@@ -96,7 +95,7 @@ class Grid {
   }
 
   withinBounds(position) {
-    return position.x >= 0 && position.x < this.size &&
-           position.y >= 0 && position.y < this.size;
+    return position.x >= 0 && position.x < 4 &&
+           position.y >= 0 && position.y < 4;
   }
 }
