@@ -93,13 +93,8 @@ class HTMLActuator {
     element.setAttribute("class", classes.join(" "));
   }
 
-  normalizePosition(position) {
-    return { x: position.x + 1, y: position.y + 1 };
-  }
-
   positionClass(position) {
-    position = this.normalizePosition(position);
-    return `tile-position-${position.x}-${position.y}`;
+    return `tile-position-${position.x + 1}-${position.y + 1}`;
   }
 
   updateScore(score) {
