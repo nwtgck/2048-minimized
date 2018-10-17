@@ -73,7 +73,7 @@ h1.title {
     width: 100%;
     top: 10px;
     left: 0;
-    text-transform: uppercase;
+    content: "SCORE";
     font-size: 13px;
     line-height: 13px;
     text-align: center;
@@ -89,9 +89,6 @@ h1.title {
     z-index: 100;
     animation: move-up 600ms ease-in;
     animation-fill-mode: both; }
-
-.sc:after {
-  content: "Score"; }
 
 p {
   margin-top: 0;
